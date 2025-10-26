@@ -1,0 +1,312 @@
+/* Recycle Bin Page Styles */
+.recycle-bin-container {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Header Styles */
+.recycle-bin-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+.back-button {
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  left: -60px;
+}
+
+.back-button:hover {
+  background-color: #FFA500;
+}
+
+.title-banner {
+  background-color: #FFD700;
+  color: black;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  display: inline-block;
+  transition: width 0.1s ease;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Deleted Designs Section */
+.deleted-designs-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 0;
+}
+
+.deleted-designs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.deleted-design-item {
+  background-color: black;
+  border: 2px solid #FFD700;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.deleted-design-item:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.design-thumbnail {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #FFD700;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.design-name {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1rem;
+  flex: 1;
+}
+
+/* Design Modal */
+.design-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.design-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.modal-close-button:hover {
+  background-color: #FFA500;
+}
+
+.modal-design-image {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .recycle-bin-header {
+    max-width: 500px;
+  }
+  
+  .back-button {
+    left: -50px;
+  }
+  
+  .title-banner {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .deleted-designs-list {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .recycle-bin-container {
+    padding: 1rem;
+  }
+  
+  .recycle-bin-header {
+    margin-bottom: 2rem;
+    max-width: 400px;
+  }
+  
+  .title-banner {
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+  }
+  
+  .back-button {
+    left: -40px;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .deleted-designs-list {
+    max-width: 400px;
+  }
+  
+  .deleted-design-item {
+    padding: 0.8rem;
+  }
+  
+  .design-thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .design-name {
+    font-size: 0.9rem;
+  }
+  
+  .design-modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .recycle-bin-header {
+    max-width: 300px;
+  }
+  
+  .title-banner {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+  }
+  
+  .back-button {
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .deleted-designs-list {
+    max-width: 300px;
+  }
+  
+  .deleted-design-item {
+    padding: 0.6rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .design-thumbnail {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .design-name {
+    font-size: 0.8rem;
+  }
+  
+  .design-modal-content {
+    max-width: 98vw;
+    max-height: 98vh;
+  }
+  
+  .modal-close-button {
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+  }
+}
