@@ -29,22 +29,22 @@ const deletedDesigns = [
   {
     id: 1,
     name: "deleted-design-000007",
-    thumbnail: "/src/images/illustration7.png"
+    thumbnail: "/images/illustration7.png"
   },
   {
     id: 2,
     name: "deleted-design-000008", 
-    thumbnail: "/src/images/illustration8.png"
+    thumbnail: "/images/illustration8.png"
   },
   {
     id: 3,
     name: "deleted-design-000009",
-    thumbnail: "/src/images/illustration9.png"
+    thumbnail: "/images/illustration9.png"
   },
   {
     id: 4,
     name: "deleted-design-000010",
-    thumbnail: "/src/images/illustration10.png"
+    thumbnail: "/images/illustration10.png"
   }
 ]
 

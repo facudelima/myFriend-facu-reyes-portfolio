@@ -46,37 +46,37 @@ const translations = {
 
 // Software tool icons data
 const softwareTools = [
-  { name: 'Figma', icon: '/src/images/figma.png', skillLevel: 4 },
-  { name: 'Photoshop', icon: '/src/images/ps.png', skillLevel: 5 },
-  { name: 'After Effects', icon: '/src/images/ae.png', skillLevel: 3 },
-  { name: 'Illustrator', icon: '/src/images/ai.png', skillLevel: 5 }
+  { name: 'Figma', icon: '/images/figma.png', skillLevel: 4 },
+  { name: 'Photoshop', icon: '/images/ps.png', skillLevel: 5 },
+  { name: 'After Effects', icon: '/images/ae.png', skillLevel: 3 },
+  { name: 'Illustrator', icon: '/images/ai.png', skillLevel: 5 }
 ]
 
 // Illustrations data
 const illustrations = [
   {
     id: 1,
-    image: '/src/images/illustration1.png'
+    image: '/images/illustration1.png'
   },
   {
     id: 2,
-    image: '/src/images/illustration2.png'
+    image: '/images/illustration2.png'
   },
   {
     id: 3,
-    image: '/src/images/illustration3.png'
+    image: '/images/illustration3.png'
   },
   {
     id: 4,
-    image: '/src/images/illustration4.png'
+    image: '/images/illustration4.png'
   },
   {
     id: 5,
-    image: '/src/images/illustration5.png'
+    image: '/images/illustration5.png'
   },
   {
     id: 6,
-    image: '/src/images/illustration6.png'
+    image: '/images/illustration6.png'
   }
 ]
 
@@ -84,30 +84,30 @@ const illustrations = [
 const motionGraphics = [
   {
     id: 1,
-    video: './src/images/motiongraphics1.mp4',
+    video: '/images/motiongraphics1.mp4',
     title: 'Motion Graphics 1'
   },
   {
     id: 2,
-    video: './src/images/motiongraphics2.mp4',
+    video: '/images/motiongraphics2.mp4',
     title: 'Motion Graphics 2'
   },
   {
     id: 3,
-    video: './src/images/motiongraphics3.mp4',
+    video: '/images/motiongraphics3.mp4',
     title: 'Motion Graphics 3'
   },
   {
     id: 4,
-    video: './src/images/motiongraphics4.mp4',
+    video: '/images/motiongraphics4.mp4',
     title: 'Motion Graphics 4'
   }
 ]
 
 // UI/UX data
 const uiuxDesigns = [
-  { id: 2, image: '/src/images/uiux2.png', title: 'UI/UX Design 2' },
-  { id: 1, image: '/src/images/uiux1.png', title: 'UI/UX Design 1' }
+  { id: 2, image: '/images/uiux2.png', title: 'UI/UX Design 2' },
+  { id: 1, image: '/images/uiux1.png', title: 'UI/UX Design 1' }
 ]
 
 function WhatIDo({ language }) {
@@ -146,7 +146,7 @@ function WhatIDo({ language }) {
   const handleCV = () => {
     // Create a temporary link element to download the CV
     const link = document.createElement('a')
-    link.href = '/src/images/cv.pdf'
+    link.href = '/images/cv.pdf'
     link.download = 'CV_Facundo_Reyes.pdf'
     document.body.appendChild(link)
     link.click()
@@ -224,7 +224,7 @@ function WhatIDo({ language }) {
         </div>
         <button className="cv-button" onClick={handleCV}>
           <img
-            src="/src/images/cv.png"
+            src="/images/cv.png"
             alt="CV"
             className="cv-image"
           />
@@ -339,7 +339,7 @@ function WhatIDo({ language }) {
         {/* Floating Recycle Bin */}
         <div className="floating-recycle-bin" onClick={handleRecycleBinClick}>
           <img
-            src="/src/images/trash-icon.png"
+            src="/images/trash-icon.png"
             alt="Recycle Bin"
             className="trash-icon-image"
           />

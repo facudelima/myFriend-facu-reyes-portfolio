@@ -171,21 +171,21 @@ const Contact = ({ language }) => {
             onClick={() => handleSocialClick('https://www.linkedin.com/in/facur/')}
             title="LinkedIn"
           >
-            <img src="/src/images/linkedin.png" alt="LinkedIn" className="social-icon" />
+            <img src="/images/linkedin.png" alt="LinkedIn" className="social-icon" />
           </button>
           <button 
             className="social-link instagram" 
             onClick={() => handleSocialClick('https://www.instagram.com/imfucdat/')}
             title="Instagram"
           >
-            <img src="/src/images/instagram.png" alt="Instagram" className="social-icon" />
+            <img src="/images/instagram.png" alt="Instagram" className="social-icon" />
           </button>
           <button 
             className="social-link behance" 
             onClick={() => handleSocialClick('https://www.behance.net/facundoreyes')}
             title="Behance"
           >
-            <img src="/src/images/behance.png" alt="Behance" className="social-icon" />
+            <img src="/images/behance.png" alt="Behance" className="social-icon" />
           </button>
             </div>
           </div>
