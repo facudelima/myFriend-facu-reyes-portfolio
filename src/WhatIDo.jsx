@@ -370,7 +370,7 @@ function WhatIDo({ language }) {
             <p className="project-modal-text">
               Kiddest is an educational mobile app that teaches English to kids through fun and interactive experiences. It combines mini-games, daily challenges, and visual rewards (like stars and customizable characters) to keep learners engaged and motivated. The interface is fully designed for mobile, using a colorful and accessible UX/UI focused on children's learning and enjoyment.
             </p>
-            <button className="prototype-button" onClick={() => window.open('https://www.figma.com/proto/your-prototype-link', '_blank')}>
+            <button className="prototype-button" onClick={() => window.open('https://www.figma.com/proto/aoYB5uXYZhpkk2JgTXM6ts/Prototipo-en-ALTA?page-id=0%3A1&node-id=112-29885&p=f&viewport=470%2C435%2C0.05&t=a6ccAKgZn9UVjueg-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=112%3A29885', '_blank')}>
               TRY THE PROTOTYPE
             </button>
           </div>
