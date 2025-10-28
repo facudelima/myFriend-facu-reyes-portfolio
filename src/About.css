@@ -1,3 +1,6 @@
+/* Import Kosugi Maru font */
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
 /* About Page Styles */
 .about-container {
   width: 100%;
@@ -10,6 +13,8 @@
   align-items: center;
   padding: 2rem;
   box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .about-content {
@@ -41,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -84,11 +89,11 @@
 .about-main {
   display: flex;
   gap: 3rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 3rem auto 0 auto;
 }
 
 /* Profile Section */
@@ -97,45 +102,55 @@
   position: relative;
 }
 
-.profile-brackets {
+.profile-container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.bracket {
+.profile-container::before {
+  content: '';
   position: absolute;
-  border: 2px solid black;
-  width: 50px;
-  height: 50px;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
 }
 
-.bracket-top-left {
-  top: -20px;
-  left: -20px;
-  border-right: none;
-  border-bottom: none;
+.profile-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
 }
 
-.bracket-top-right {
-  top: -20px;
-  right: -20px;
-  border-left: none;
-  border-bottom: none;
+.corner-bottom-left {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
 }
 
-.bracket-bottom-left {
-  bottom: -20px;
-  left: 10px;
-  border-right: none;
-  border-top: none;
-}
-
-.bracket-bottom-right {
-  bottom: -20px;
-  right: -20px;
-  border-left: none;
-  border-top: none;
+.corner-bottom-right {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
 }
 
 .profile-icon {
@@ -143,8 +158,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
 }
 
 .profile-head {
@@ -196,6 +211,7 @@
 }
 
 .hobbies-title {
+  font-family: 'Kosugi Maru', sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
   color: black;
@@ -255,6 +271,12 @@ body.modal-open {
   height: 100vh;
 }
 
+/* Ensure About page scrolling works with modals */
+body.about-page.modal-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
 /* Games Modal */
 .games-modal-overlay {
   position: fixed;
@@ -309,7 +331,7 @@ body.modal-open {
 }
 
 .warning-icon {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .modal-title {
@@ -553,7 +575,7 @@ body.modal-open {
   .icon-controller,
   .icon-music,
   .icon-film {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
   
   .games-modal {
@@ -657,7 +679,7 @@ body.modal-open {
   }
   
   .hobbies-title {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
   
   .hobbies-text {
@@ -1186,7 +1208,7 @@ body.modal-open {
   .icon-controller,
   .icon-music,
   .icon-film {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -1371,7 +1393,7 @@ body.modal-open {
   }
   
   .hobbies-title {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
   
   .hobbies-text {

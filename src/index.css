@@ -38,6 +38,15 @@ body {
   outline: none;
 }
 
+/* Allow scrolling for About page - only vertical */
+body.about-page {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: block;
+  justify-content: unset;
+  align-items: unset;
+}
+
 #root {
   width: 100vw;
   height: 100vh;
@@ -49,6 +58,16 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+/* Allow scrolling for About page - only vertical */
+body.about-page #root {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 /* Portfolio Background with Blur Effect */
@@ -168,13 +187,9 @@ body {
   padding: 0.5rem 1rem;
   font-weight: bold;
   cursor: pointer;
-  border: 2px solid black;
+  border: none;
   transition: all 0.3s ease;
   font-size: 0.9rem;
-}
-
-.lang-option:first-child {
-  border-right: none;
 }
 
 .lang-option.active {

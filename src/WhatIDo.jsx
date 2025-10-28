@@ -6,7 +6,7 @@ import './WhatIDo.css'
 const translations = {
   EN: {
     header: {
-      back: "←",
+      back: "<",
       title: "WHAT I DO!!",
       cv: "CV"
     },
@@ -25,7 +25,7 @@ const translations = {
   },
   ES: {
     header: {
-      back: "←",
+      back: "<",
       title: "QUÉ HAGO!!",
       cv: "CV"
     },
@@ -242,7 +242,7 @@ function WhatIDo({ language }) {
 
         <div className="content-grid-container">
           <button className="nav-arrow nav-arrow-left" onClick={prevSlide}>
-            ←
+            {'<'}
           </button>
 
           {currentSection === 'illustrations' ? (
@@ -297,7 +297,7 @@ function WhatIDo({ language }) {
           )}
 
           <button className="nav-arrow nav-arrow-right" onClick={nextSlide}>
-            →
+            {'>'}
           </button>
         </div>
       </div>

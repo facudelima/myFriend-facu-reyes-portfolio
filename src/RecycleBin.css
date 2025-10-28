@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -80,8 +80,8 @@
 }
 
 .deleted-design-item {
-  background-color: black;
-  border: 2px solid #FFD700;
+  background-color: transparent;
+  border: 2px solid black;
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -92,7 +92,7 @@
 }
 
 .deleted-design-item:hover {
-  background-color: #333;
+  background-color: #f0f0f0;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -113,7 +113,7 @@
 }
 
 .design-name {
-  color: #FFD700;
+  color: black;
   font-weight: bold;
   font-size: 1rem;
   flex: 1;
@@ -155,7 +155,7 @@
   width: 30px;
   height: 30px;
   border-radius: 0;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: bold;
   cursor: pointer;
   z-index: 1001;
@@ -228,7 +228,7 @@
   }
   
   .title-banner {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     padding: 0.6rem 1rem;
   }
   

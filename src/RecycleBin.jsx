@@ -6,7 +6,7 @@ import './RecycleBin.css'
 const translations = {
   EN: {
     header: {
-      back: "←",
+      back: "<",
       title: "RECYCLE BIN"
     },
     deletedDesigns: {
@@ -15,7 +15,7 @@ const translations = {
   },
   ES: {
     header: {
-      back: "←",
+      back: "<",
       title: "PAPELERA"
     },
     deletedDesigns: {

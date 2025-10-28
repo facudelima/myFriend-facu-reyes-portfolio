@@ -16,7 +16,7 @@ const Contact = ({ language }) => {
   const translations = {
     EN: {
       header: {
-        back: '←',
+        back: '<',
         title: "LET'S TALK!"
       },
       form: {
@@ -34,7 +34,7 @@ const Contact = ({ language }) => {
     },
     ES: {
       header: {
-        back: '←',
+        back: '<',
         title: "¡HABLEMOS!"
       },
       form: {

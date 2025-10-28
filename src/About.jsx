@@ -6,7 +6,7 @@ import './About.css'
 const translations = {
   EN: {
     title: "WHO AM I??????",
-    backButton: "←",
+    backButton: "<",
     paragraph1: "First things first: I like to think I'm a decent human being - and that matters. On top of that, I'm a Graphic Designer and UX/UI Designer.",
     paragraph2: "I've learned plenty through formal studies - courses, academies, the usual. But a big part of my skills comes from being self-taught, which led me to explore AI tools, dive into After Effects, and even build my own creative brand.",
     paragraph3: "I like projects that make me think – even when they make me swear at my screen. Challenges keep me awake, coffee keeps me alive, and the rest is just figuring it out.",
@@ -20,7 +20,7 @@ const translations = {
   },
   ES: {
     title: "¿QUIÉN SOY??????",
-    backButton: "←",
+    backButton: "<",
     paragraph1: "Primero lo primero: me gusta pensar que soy una persona decente - y eso importa. Además de eso, soy Diseñador Gráfico y Diseñador UX/UI.",
     paragraph2: "He aprendido mucho a través de estudios formales - cursos, academias, lo usual. Pero gran parte de mis habilidades provienen de ser autodidacta, lo que me llevó a explorar herramientas de IA, sumergirme en After Effects, e incluso construir mi propia marca creativa.",
     paragraph3: "Me gustan los proyectos que me hacen pensar - incluso cuando me hacen maldecir mi pantalla. Los desafíos me mantienen despierto, el café me mantiene vivo, y el resto es solo averiguarlo.",
@@ -126,15 +126,13 @@ function About({ language = 'EN' }) {
         <div className="about-main">
           {/* Profile Placeholder */}
           <div className="profile-section">
-            <div className="profile-brackets">
-              <div className="bracket bracket-top-left"></div>
-              <div className="bracket bracket-top-right"></div>
-              <div className="bracket bracket-bottom-left"></div>
-              <div className="bracket bracket-bottom-right"></div>
+            <div className="profile-container">
               <div className="profile-icon">
                 <div className="profile-head"></div>
                 <div className="profile-body"></div>
               </div>
+              <div className="corner-bottom-left"></div>
+              <div className="corner-bottom-right"></div>
             </div>
           </div>
 
