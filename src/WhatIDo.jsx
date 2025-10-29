@@ -21,6 +21,12 @@ const translations = {
     },
     mainTools: {
       title: "MAIN TOOLS"
+    },
+    project: {
+      aboutButton: "ABOUT THE PROJECT",
+      modalTitle: "ABOUT THE PROJECT",
+      modalText: "Kiddest is an educational mobile app that teaches English to kids through fun and interactive experiences. It combines mini-games, daily challenges, and visual rewards (like stars and customizable characters) to keep learners engaged and motivated. The interface is fully designed for mobile, using a colorful and accessible UX/UI focused on children's learning and enjoyment.",
+      tryButton: "TRY THE PROTOTYPE"
     }
   },
   ES: {
@@ -40,6 +46,12 @@ const translations = {
     },
     mainTools: {
       title: "HERRAMIENTAS PRINCIPALES"
+    },
+    project: {
+      aboutButton: "ACERCA DEL PROYECTO",
+      modalTitle: "ACERCA DEL PROYECTO",
+      modalText: "Kiddest es una aplicación móvil educativa que enseña inglés a los niños a través de experiencias divertidas e interactivas. Combina mini-juegos, desafíos diarios y recompensas visuales (como estrellas y personajes personalizables) para mantener a los estudiantes comprometidos y motivados. La interfaz está completamente diseñada para móvil, utilizando un UX/UI colorido y accesible enfocado en el aprendizaje y disfrute de los niños.",
+      tryButton: "PROBAR EL PROTOTIPO"
     }
   }
 }
@@ -306,7 +318,7 @@ function WhatIDo({ language }) {
       {currentSection === 'uiux' && (
         <div className="about-project-section">
           <button className="about-project-button" onClick={handleProjectClick}>
-            ABOUT THE PROJECT
+            {t.project.aboutButton}
           </button>
         </div>
       )}
@@ -366,12 +378,12 @@ function WhatIDo({ language }) {
           <div className="project-modal-backdrop"></div>
           <div className="project-modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-button" onClick={handleCloseProjectModal}>×</button>
-            <h2 className="project-modal-title">ABOUT THE PROJECT</h2>
+            <h2 className="project-modal-title">{t.project.modalTitle}</h2>
             <p className="project-modal-text">
-              Kiddest is an educational mobile app that teaches English to kids through fun and interactive experiences. It combines mini-games, daily challenges, and visual rewards (like stars and customizable characters) to keep learners engaged and motivated. The interface is fully designed for mobile, using a colorful and accessible UX/UI focused on children's learning and enjoyment.
+              {t.project.modalText}
             </p>
             <button className="prototype-button" onClick={() => window.open('https://www.figma.com/proto/aoYB5uXYZhpkk2JgTXM6ts/Prototipo-en-ALTA?page-id=0%3A1&node-id=112-29885&p=f&viewport=470%2C435%2C0.05&t=a6ccAKgZn9UVjueg-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=112%3A29885', '_blank')}>
-              TRY THE PROTOTYPE
+              {t.project.tryButton}
             </button>
           </div>
         </div>
