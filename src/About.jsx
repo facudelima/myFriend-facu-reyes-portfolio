@@ -156,13 +156,13 @@ function About({ language = 'EN' }) {
           <p className="hobbies-text">{t.hobbiesText}</p>
           <div className="hobbies-icons">
             <div className="hobby-icon" onClick={handleGamesClick}>
-              <img src="/src/images/game.png" alt="Games" className="icon-controller" />
+              <img src="/images/game.png" alt="Games" className="icon-controller" />
             </div>
           <div className="hobby-icon" onClick={handleMusicClick}>
-            <img src="/src/images/music.png" alt="Music" className="icon-music" />
+            <img src="/images/music.png" alt="Music" className="icon-music" />
           </div>
           <div className="hobby-icon" onClick={handleMoviesClick}>
-            <img src="/src/images/movie.png" alt="Movies" className="icon-film" />
+            <img src="/images/movie.png" alt="Movies" className="icon-film" />
           </div>
           </div>
         </div>
