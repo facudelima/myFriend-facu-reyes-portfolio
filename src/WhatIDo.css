@@ -22,7 +22,6 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto 3rem auto;
-  gap: 60px;
 }
 
 .back-button {
@@ -40,6 +39,8 @@
   transition: background-color 0.3s ease;
   padding: 0;
   flex-shrink: 0;
+  position: absolute;
+  left: 0;
 }
 
 .cv-button {
@@ -57,6 +58,8 @@
   justify-content: center;
   padding: 0;
   flex-shrink: 0;
+  position: absolute;
+  right: 0;
 }
 
 .cv-image {
@@ -73,23 +76,12 @@
   font-size: 2rem;
   font-weight: 900;
   text-align: center;
-  display: inline-block;
   transition: width 0.1s ease;
+  margin: 0 auto;
 }
 
 .back-button:hover, .cv-button:hover {
   background-color: #FFA500;
-}
-
-.title-banner {
-  background-color: #FFD700;
-  color: black;
-  padding: 1rem 2rem;
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
-  display: inline-block;
-  transition: width 0.1s ease;
 }
 
 .cursor {
@@ -727,7 +719,7 @@
   
   .what-i-do-header {
     max-width: 500px;
-    gap: 50px;
+    column-gap: 50px;
   }
   
   
@@ -757,7 +749,7 @@
   .what-i-do-header {
     margin-bottom: 2rem;
     max-width: 400px;
-    gap: 40px;
+    column-gap: 40px;
   }
   
   .title-banner {
@@ -941,7 +933,7 @@
   
   .what-i-do-header {
     max-width: 300px;
-    gap: 30px;
+    column-gap: 30px;
   }
   
   .title-banner {
