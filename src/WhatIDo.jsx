@@ -88,7 +88,7 @@ const illustrations = [
   },
   {
     id: 6,
-    image: '/images/illustration6.png'
+    image: '/images/illustration11.png'
   }
 ]
 

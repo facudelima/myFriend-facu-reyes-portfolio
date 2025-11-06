@@ -196,11 +196,20 @@
   margin-bottom: 0;
 }
 
+/* Hobbies Divider */
+.hobbies-divider {
+  width: 100%;
+  max-width: 720px;
+  height: 2px;
+  background-color: black;
+  margin: 3rem auto 0 auto;
+}
+
 /* Hobbies & Interests Section */
 .hobbies-section {
-  margin-top: 4rem;
+  margin-top: 2rem;
   text-align: center;
-  max-width: 600px;
+  max-width: 720px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -227,8 +236,9 @@
   margin-bottom: 1.5rem;
   text-align: left;
   font-family: 'Inter', sans-serif;
-  max-width: 600px;
-  align-self: flex-start;
+  max-width: 720px;
+  width: 100%;
+  align-self: center;
 }
 
 .hobbies-icons {
@@ -324,15 +334,6 @@ body.about-page.modal-open {
   text-align: center;
 }
 
-.games-modal-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #FFD700;
-}
 
 .warning-icon {
   font-size: 1.6rem;
@@ -457,15 +458,6 @@ body.about-page.modal-open {
   text-align: center;
 }
 
-.music-modal-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #FFD700;
-}
 
 .music-modal-body {
   padding: 1.5rem;
@@ -559,8 +551,12 @@ body.about-page.modal-open {
     right: -15px;
   }
   
+  .hobbies-divider {
+    margin: 2.5rem auto 0 auto;
+  }
+  
   .hobbies-section {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
   
   .hobbies-title {
@@ -682,8 +678,12 @@ body.about-page.modal-open {
     right: -12px;
   }
   
+  .hobbies-divider {
+    margin: 2rem auto 0 auto;
+  }
+  
   .hobbies-section {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
   }
   
   .hobbies-title {
@@ -818,8 +818,12 @@ body.about-page.modal-open {
     right: -10px;
   }
   
+  .hobbies-divider {
+    margin: 1.5rem auto 0 auto;
+  }
+  
   .hobbies-section {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
   
   .hobbies-title {
@@ -929,15 +933,6 @@ body.about-page.modal-open {
   text-align: center;
 }
 
-.movies-modal-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #FFD700;
-}
 
 .movies-modal-body {
   padding: 1.5rem;
@@ -1202,9 +1197,15 @@ body.about-page.modal-open {
     line-height: 1.6;
   }
   
+  .hobbies-divider {
+    max-width: 720px;
+    margin: 2rem auto 0 auto;
+  }
+  
   .hobbies-section {
     order: 3;
-    max-width: 600px;
+    max-width: 720px;
+    margin-top: 1.5rem;
   }
   
   .hobbies-title {
@@ -1313,8 +1314,14 @@ body.about-page.modal-open {
     line-height: 1.5;
   }
   
+  .hobbies-divider {
+    max-width: 100%;
+    margin: 1.5rem auto 0 auto;
+  }
+  
   .hobbies-section {
     max-width: 100%;
+    margin-top: 1.5rem;
   }
   
   .hobbies-title {

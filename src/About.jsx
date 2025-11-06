@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './About.css'
 
 // Translations object for About page
@@ -42,23 +42,47 @@ function About({ language = 'EN' }) {
   const [showGamesModal, setShowGamesModal] = useState(false)
   const [showMusicModal, setShowMusicModal] = useState(false)
   const [showMoviesModal, setShowMoviesModal] = useState(false)
+  const animationRef = useRef({
+    currentIndex: 0,
+    phase: 'typing'
+  })
 
   useEffect(() => {
     const fullTitle = t.title
-    let currentIndex = 0
+    // Resetear el estado de animación cuando cambia el título o idioma
+    animationRef.current.currentIndex = 0
+    animationRef.current.phase = 'typing'
+    setIsTyping(true)
     
     const typeInterval = setInterval(() => {
-      if (currentIndex < fullTitle.length) {
-        setDisplayedTitle(fullTitle.slice(0, currentIndex + 1))
-        currentIndex++
-      } else {
-        clearInterval(typeInterval)
-        setIsTyping(false)
+      if (animationRef.current.phase === 'typing') {
+        if (animationRef.current.currentIndex < fullTitle.length) {
+          setDisplayedTitle(fullTitle.slice(0, animationRef.current.currentIndex + 1))
+          animationRef.current.currentIndex++
+        } else {
+          // Terminó de escribir, ahora empieza a borrar los signos extra
+          animationRef.current.phase = 'deleting'
+        }
+      } else if (animationRef.current.phase === 'deleting') {
+        // Encontrar el último signo de interrogación que queremos mantener
+        // Buscar "WHO AM I" o "¿QUIÉN SOY" y dejar solo un ?
+        const baseText = language === 'EN' ? 'WHO AM I' : '¿QUIÉN SOY'
+        const targetText = baseText + '?'
+        
+        if (animationRef.current.currentIndex > targetText.length) {
+          setDisplayedTitle(fullTitle.slice(0, animationRef.current.currentIndex - 1))
+          animationRef.current.currentIndex--
+        } else {
+          // Ya borró todos los signos extra, dejar solo el texto objetivo
+          setDisplayedTitle(targetText)
+          clearInterval(typeInterval)
+          setIsTyping(false)
+        }
       }
     }, 100) // Velocidad de escritura (100ms por letra)
 
     return () => clearInterval(typeInterval)
-  }, [t.title])
+  }, [t.title, language])
 
   // Handle body class for modal overlay and About page
   useEffect(() => {
@@ -149,6 +173,9 @@ function About({ language = 'EN' }) {
             </p>
           </div>
         </div>
+
+        {/* Divider */}
+        <div className="hobbies-divider"></div>
 
         {/* Hobbies & Interests Section */}
         <div className="hobbies-section">

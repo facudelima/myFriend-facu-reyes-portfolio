@@ -28,21 +28,26 @@ const translations = {
 const deletedDesigns = [
   {
     id: 1,
+    name: "deleted-design-000006",
+    thumbnail: "/images/illustration6.png"
+  },
+  {
+    id: 2,
     name: "deleted-design-000007",
     thumbnail: "/images/illustration7.png"
   },
   {
-    id: 2,
+    id: 3,
     name: "deleted-design-000008", 
     thumbnail: "/images/illustration8.png"
   },
   {
-    id: 3,
+    id: 4,
     name: "deleted-design-000009",
     thumbnail: "/images/illustration9.png"
   },
   {
-    id: 4,
+    id: 5,
     name: "deleted-design-000010",
     thumbnail: "/images/illustration10.png"
   }

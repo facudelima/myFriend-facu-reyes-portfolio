@@ -21,7 +21,7 @@ const translations = {
     },
     portfolio: {
       location: "MONTEVIDEO, UY",
-      year: "2025",
+      year: new Date().getFullYear().toString(),
       hello: "HELLO",
       imFacu: "I'M FACU",
       andThisIs: "AND THIS IS",
@@ -48,7 +48,7 @@ const translations = {
     },
     portfolio: {
       location: "MONTEVIDEO, UY",
-      year: "2025",
+      year: new Date().getFullYear().toString(),
       hello: "HELLO",
       imFacu: "I'M FACU",
       andThisIs: "AND THIS IS",
