@@ -22,6 +22,7 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto 3rem auto;
+  gap: 60px;
 }
 
 .back-button {
@@ -37,8 +38,8 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  position: absolute;
-  left: -60px;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .cv-button {
@@ -54,9 +55,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  right: -60px;
-  padding: 2px;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .cv-image {
@@ -192,6 +192,12 @@
 .illustration-item {
   position: relative;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.illustration-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .illustration-frame {
@@ -210,11 +216,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.illustration-image:hover {
-  transform: scale(1.05);
 }
 
 /* Motion Graphics Grid */
@@ -366,10 +367,12 @@
   align-items: center;
   justify-content: center;
   border-radius: 0;
-  transition: background-color 0.3s ease;
+  border: 3px solid transparent;
+  transition: background-color 0.3s ease, border 0.3s ease;
   padding: 8px;
   position: relative;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .tool-logo {
@@ -380,6 +383,7 @@
 
 .tool-icon:hover {
   background-color: black;
+  border: 3px solid #FFD700;
 }
 
 .tool-skill-indicator {
@@ -723,14 +727,7 @@
   
   .what-i-do-header {
     max-width: 500px;
-  }
-  
-  .back-button {
-    left: -50px;
-  }
-  
-  .cv-button {
-    right: -50px;
+    gap: 50px;
   }
   
   
@@ -760,6 +757,7 @@
   .what-i-do-header {
     margin-bottom: 2rem;
     max-width: 400px;
+    gap: 40px;
   }
   
   .title-banner {
@@ -768,18 +766,16 @@
   }
   
   .back-button {
-    left: -40px;
     width: 35px;
     height: 35px;
     font-size: 1rem;
   }
   
   .cv-button {
-    right: -40px;
     width: 35px;
     height: 35px;
     font-size: 1rem;
-    padding: 1px;
+    padding: 0;
   }
   
   
@@ -945,6 +941,7 @@
   
   .what-i-do-header {
     max-width: 300px;
+    gap: 30px;
   }
   
   .title-banner {
@@ -953,18 +950,16 @@
   }
   
   .back-button {
-    left: -30px;
     width: 30px;
     height: 30px;
     font-size: 0.9rem;
   }
   
   .cv-button {
-    right: -30px;
     width: 30px;
     height: 30px;
     font-size: 0.9rem;
-    padding: 1px;
+    padding: 0;
   }
   
   
