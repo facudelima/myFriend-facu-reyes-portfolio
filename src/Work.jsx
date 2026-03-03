@@ -57,7 +57,12 @@ export default function Work() {
                             <p>Goal: {project.goal}</p>
                         </div>
                         <div className="project-action">
-                            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="pill-button project-link">View on Behance ↗</a>
+                            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="pill-button project-link">
+                                View on Behance
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
+                                    <path d="M8.28309 2.82215L1.16897 9.93628L0 8.76731L7.11413 1.65318H0.8438V0H9.93627V9.0925H8.28309V2.82215Z" fill="currentColor" />
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 ))}
