@@ -1,268 +1,52 @@
-import { useNavigate } from 'react-router-dom'
-import { useState, useEffect, useRef } from 'react'
-import './About.css'
-
-// Translations object for About page
-const translations = {
-  EN: {
-    title: "WHO AM I??????",
-    backButton: "<",
-    paragraph1: "First things first: I like to think I'm a decent human being - and that matters. On top of that, I'm a Graphic Designer and UX/UI Designer.",
-    paragraph2: "I've learned plenty through formal studies - courses, academies, the usual. But a big part of my skills comes from being self-taught, which led me to explore AI tools, dive into After Effects, and even build my own creative brand.",
-    paragraph3: "I like projects that make me think – even when they make me swear at my screen. Challenges keep me awake, coffee keeps me alive, and the rest is just figuring it out.",
-    hobbiesTitle: "HOBBIES & INTERESTS",
-    hobbiesText: "Outside of work, I'm usually sketching ideas for my brand, digging into music and urban aesthetics, or getting lost in video games. Those things help me switch off — but they also end up sparking ideas: a playlist can turn into a concept, a film into a moodboard, or a street texture into a design detail.",
-    modalTitle: "¡RECOMENDATION ALERT!",
-    modalText: "System flagged unusual activity, suggested games:",
-    modalTextMusic: "System flagged unusual activity, sugested albums:",
-    modalTextMovies: "System flagged unusual activity, sugested movies:",
-    ignoreButton: "IGNORE"
-  },
-  ES: {
-    title: "¿QUIÉN SOY??????",
-    backButton: "<",
-    paragraph1: "Primero lo primero: me gusta pensar que soy una persona decente - y eso importa. Además de eso, soy Diseñador Gráfico y Diseñador UX/UI.",
-    paragraph2: "He aprendido mucho a través de estudios formales - cursos, academias, lo usual. Pero gran parte de mis habilidades provienen de ser autodidacta, lo que me llevó a explorar herramientas de IA, sumergirme en After Effects, e incluso construir mi propia marca creativa.",
-    paragraph3: "Me gustan los proyectos que me hacen pensar - incluso cuando me hacen maldecir mi pantalla. Los desafíos me mantienen despierto, el café me mantiene vivo, y el resto es solo averiguarlo.",
-    hobbiesTitle: "PASATIEMPOS E INTERESES",
-    hobbiesText: "Fuera del trabajo, suelo estar dibujando ideas para mi marca, profundizando en música y estética urbana, o perdiéndome en videojuegos. Esas cosas me ayudan a desconectar — pero también terminan generando ideas: una playlist puede convertirse en un concepto, una película en un moodboard, o una textura de calle en un detalle de diseño.",
-    modalTitle: "¡ALERTA DE RECOMENDACIÓN!",
-    modalText: "El sistema detectó actividad inusual, juegos sugeridos:",
-    modalTextMusic: "El sistema detectó actividad inusual, álbumes sugeridos:",
-    modalTextMovies: "El sistema detectó actividad inusual, películas sugeridas:",
-    ignoreButton: "IGNORAR"
-  }
-}
-
-function About({ language = 'EN' }) {
-  const navigate = useNavigate()
-  const t = translations[language]
-  const [displayedTitle, setDisplayedTitle] = useState('')
-  const [isTyping, setIsTyping] = useState(true)
-  const [showGamesModal, setShowGamesModal] = useState(false)
-  const [showMusicModal, setShowMusicModal] = useState(false)
-  const [showMoviesModal, setShowMoviesModal] = useState(false)
-  const animationRef = useRef({
-    currentIndex: 0,
-    phase: 'typing'
-  })
-
-  useEffect(() => {
-    const fullTitle = t.title
-    // Resetear el estado de animación cuando cambia el título o idioma
-    animationRef.current.currentIndex = 0
-    animationRef.current.phase = 'typing'
-    setIsTyping(true)
-    
-    const typeInterval = setInterval(() => {
-      if (animationRef.current.phase === 'typing') {
-        if (animationRef.current.currentIndex < fullTitle.length) {
-          setDisplayedTitle(fullTitle.slice(0, animationRef.current.currentIndex + 1))
-          animationRef.current.currentIndex++
-        } else {
-          // Terminó de escribir, ahora empieza a borrar los signos extra
-          animationRef.current.phase = 'deleting'
-        }
-      } else if (animationRef.current.phase === 'deleting') {
-        // Encontrar el último signo de interrogación que queremos mantener
-        // Buscar "WHO AM I" o "¿QUIÉN SOY" y dejar solo un ?
-        const baseText = language === 'EN' ? 'WHO AM I' : '¿QUIÉN SOY'
-        const targetText = baseText + '?'
-        
-        if (animationRef.current.currentIndex > targetText.length) {
-          setDisplayedTitle(fullTitle.slice(0, animationRef.current.currentIndex - 1))
-          animationRef.current.currentIndex--
-        } else {
-          // Ya borró todos los signos extra, dejar solo el texto objetivo
-          setDisplayedTitle(targetText)
-          clearInterval(typeInterval)
-          setIsTyping(false)
-        }
-      }
-    }, 100) // Velocidad de escritura (100ms por letra)
-
-    return () => clearInterval(typeInterval)
-  }, [t.title, language])
-
-  // Handle body class for modal overlay and About page
-  useEffect(() => {
-    const isModalOpen = showGamesModal || showMusicModal || showMoviesModal
-    
-    // Add About page class
-    document.body.classList.add('about-page')
-    
-    if (isModalOpen) {
-      document.body.classList.add('modal-open')
-    } else {
-      document.body.classList.remove('modal-open')
-    }
-
-    // Cleanup on unmount
-    return () => {
-      document.body.classList.remove('modal-open', 'about-page')
-    }
-  }, [showGamesModal, showMusicModal, showMoviesModal])
-
-  const handleBackClick = () => {
-    navigate('/')
-  }
-
-  const handleGamesClick = () => {
-    setShowGamesModal(true)
-  }
-
-  const handleCloseGamesModal = () => {
-    setShowGamesModal(false)
-  }
-
-  const handleMusicClick = () => {
-    setShowMusicModal(true)
-  }
-
-  const handleCloseMusicModal = () => {
-    setShowMusicModal(false)
-  }
-
-  const handleMoviesClick = () => { // New handler for movies modal
-    setShowMoviesModal(true)
-  }
-
-  const handleCloseMoviesModal = () => { // New handler to close movies modal
-    setShowMoviesModal(false)
-  }
-
+export default function About() {
   return (
-    <>
-      <div className={`about-container ${showGamesModal || showMusicModal || showMoviesModal ? 'blurred' : ''}`}>
-        <div className="about-content">
-          {/* Header */}
-        <div className="about-header">
-          <button className="back-button" onClick={handleBackClick}>
-            {t.backButton}
-          </button>
-          <h1 className="about-title">
-            {displayedTitle}
-            {isTyping && <span className="cursor">|</span>}
-          </h1>
-        </div>
+    <div className="container about-page-wrapper">
+      <h2 className="page-title">About</h2>
 
-        {/* Main Content */}
-        <div className="about-main">
-          {/* Profile Placeholder */}
-          <div className="profile-section">
-            <div className="profile-container">
-              <div className="profile-icon">
-                <div className="profile-head"></div>
-                <div className="profile-body"></div>
+      <div className="about-intro">
+        <p>I'm a UX/UI Designer focused on creating clear, modern digital products with strong attention to detail. I design experiences that balance usability, visual clarity and consistency, and I also collaborate on visual design and motion projects when needed.</p>
+      </div>
+
+      <div className="about-content">
+        <div className="about-what-i-do">
+          <h3>What I do</h3>
+          <ul className="do-list">
+            <li>
+              <div className="do-icon black-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
               </div>
-              <div className="corner-bottom-left"></div>
-              <div className="corner-bottom-right"></div>
-            </div>
-          </div>
-
-          {/* Text Content */}
-          <div className="about-text">
-            <p className="about-paragraph">
-              {t.paragraph1}
-            </p>
-            <p className="about-paragraph">
-              {t.paragraph2}
-            </p>
-            <p className="about-paragraph">
-              {t.paragraph3}
-            </p>
-          </div>
+              <div className="do-text">
+                <strong>UX/UI Design:</strong> User flows, wireframes, and UI systems.
+              </div>
+            </li>
+            <li>
+              <div className="do-icon black-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              </div>
+              <div className="do-text">
+                <strong>Visual Design:</strong> Branding and visual direction for digital projects.
+              </div>
+            </li>
+            <li>
+              <div className="do-icon black-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div className="do-text">
+                <strong>Motion Graphics:</strong> Simple animations and motion pieces.
+              </div>
+            </li>
+          </ul>
         </div>
 
-        {/* Divider */}
-        <div className="hobbies-divider"></div>
-
-        {/* Hobbies & Interests Section */}
-        <div className="hobbies-section">
-          <h2 className="hobbies-title">{t.hobbiesTitle}</h2>
-          <p className="hobbies-text">{t.hobbiesText}</p>
-          <div className="hobbies-icons">
-            <div className="hobby-icon" onClick={handleGamesClick}>
-              <img src="/images/game.png" alt="Games" className="icon-controller" />
-            </div>
-          <div className="hobby-icon" onClick={handleMusicClick}>
-            <img src="/images/music.png" alt="Music" className="icon-music" />
-          </div>
-          <div className="hobby-icon" onClick={handleMoviesClick}>
-            <img src="/images/movie.png" alt="Movies" className="icon-film" />
-          </div>
-          </div>
-        </div>
+        <div className="about-how-i-work">
+          <h3>How I work</h3>
+          <p>I work with a clear and structured design process, focusing on understanding the problem before moving into solutions. I value simplicity, iteration and collaboration to ensure every design decision is intentional and aligned with user and project goals.</p>
         </div>
       </div>
 
-      {/* Games Recommendation Modal */}
-      {showGamesModal && (
-        <div className="games-modal-overlay">
-          <div className="games-modal">
-            <div className="games-modal-header">
-              <div className="warning-icon">⚠️</div>
-              <span className="modal-title">{t.modalTitle}</span>
-              <button className="close-button" onClick={handleCloseGamesModal}>✕</button>
-            </div>
-            <div className="games-modal-body">
-              <p className="modal-text">{t.modalText}</p>
-              <ul className="games-list">
-                <li>Call of Duty: MW3</li>
-                <li>Red Dead Redemption 2</li>
-                <li>Skate 3</li>
-              </ul>
-              <button className="ignore-button" onClick={handleCloseGamesModal}>{t.ignoreButton}</button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Music Recommendation Modal */}
-      {showMusicModal && (
-        <div className="music-modal-overlay">
-          <div className="music-modal">
-            <div className="music-modal-header">
-              <div className="warning-icon">⚠️</div>
-              <span className="modal-title">{t.modalTitle}</span>
-              <button className="close-button" onClick={handleCloseMusicModal}>✕</button>
-            </div>
-            <div className="music-modal-body">
-              <p className="modal-text">{t.modalTextMusic}</p>
-              <ul className="music-list">
-                <li>4 Your Eyez Only – J. Cole</li>
-                <li>Visión Túnel – Cruz Cafuné</li>
-                <li>Brown Boy – Abhir</li>
-              </ul>
-              <button className="ignore-button" onClick={handleCloseMusicModal}>{t.ignoreButton}</button>
-            </div>
-          </div>
-        </div>
-          )}
-
-      {/* Movies Recommendation Modal */}
-      {showMoviesModal && (
-        <div className="movies-modal-overlay">
-          <div className="movies-modal">
-            <div className="movies-modal-header">
-              <div className="warning-icon">⚠️</div>
-              <span className="modal-title">{t.modalTitle}</span>
-              <button className="close-button" onClick={handleCloseMoviesModal}>✕</button>
-            </div>
-            <div className="movies-modal-body">
-              <p className="modal-text">{t.modalTextMovies}</p>
-              <ul className="movies-list">
-                <li>The Hunger Games: The Ballad of Songbirds & Snakes</li>
-                <li>Avengers: Endgame</li>
-                <li>Focus</li>
-              </ul>
-              <button className="ignore-button" onClick={handleCloseMoviesModal}>{t.ignoreButton}</button>
-            </div>
-          </div>
-        </div>
-      )}
-        </>
-      )
-    }
-
-    export default About
+      <div className="about-footer">
+        <a href="/images/cv.pdf" className="pill-button-solid" download>Download CV</a>
+      </div>
+    </div>
+  );
+}

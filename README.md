@@ -1,72 +1,74 @@
-# My Friend Portfolio
+# Facu Reyes Portfolio
 
-A modern portfolio website built with React and Vite, featuring a clean and responsive design.
+A premium, minimalist black and white portfolio built with React and Vite. This project features a clean, typography-focused design optimized for both desktop and mobile experiences.
 
-DEMO: https://facureyes.vercel.app/
+## ✨ Key Features
 
-## Features
+- **Minimalist Aesthetic**: High-contrast black and white design with a focus on bold typography (Inter).
+- **Single-Page Scrolling**: Seamless navigation between sections with smooth scroll behavior.
+- **Scroll-Aware Header**: Dynamic header that swaps the "Download CV" action for a "Home" icon as the user navigates.
+- **Responsive & Liquid Layout**: Carefully crafted breakpoints for perfect rendering on any screen size.
+- **Categorized Work Grid**: Interactive project filtering (UX/UI, Branding, Motion) with support for both images and high-fidelity video previews.
+- **Optimized Assets**: Local media management for fast loading and consistent presentation.
 
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
-- **Multi-language Support**: English and Spanish
-- **Modern UI**: Clean and professional design with smooth animations
-- **Contact Form**: Simple contact form with social media integration
+## 🛠️ Tech Stack
 
-## Setup and Installation
+- **Frontend**: React.js
+- **Tooling**: Vite (for lightning-fast development and optimized builds)
+- **Styling**: Vanilla CSS3 (Custom design system with flex/grid logic)
+- **Animations**: CSS transitions and smooth-scroll behavior
+
+## 🚀 Setup and Installation
 
 ### Prerequisites
 
-- Node.js (version 16 or higher)
-- npm or yarn
+- **Node.js**: Version 16 or higher
+- **npm**: (or yarn/pnpm)
 
 ### Installation
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd my-friend-portfolio
-```
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd my-friend-portfolio
+   ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-### Running the Application
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:5173`
 
-Start the development server:
-```bash
-npm run dev
-```
+## 🏗️ Project Structure
 
-This will start the frontend development server on `http://localhost:5173`
-
-## Project Structure
-
-```
+```text
 src/
 ├── components/
-│   ├── Contact.jsx          # Contact page component
-│   ├── Contact.css          # Contact page styles
-│   ├── About.jsx            # About page component
-│   ├── About.css            # About page styles
-│   └── ...
-├── App.jsx                  # Main app component
-└── index.css               # Global styles
+│   ├── Header.jsx        # Dynamic navigation header
+│   ├── Home.jsx          # Hero/Intro section
+│   └── MenuOverlay.jsx   # Full-screen navigation menu
+├── About.jsx             # About & Skills section
+├── Work.jsx             # Project grid with filtering logic
+├── Contact.jsx          # Contact form and social links
+├── App.jsx               # Main layout and scroll logic
+└── index.css            # Global design system and styles
 ```
 
-## Available Scripts
+## 📜 Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+- `npm run dev`: Starts the local dev server.
+- `npm run build`: Compiles the project for production.
+- `npm run preview`: Previews the production build locally.
+- `npm run lint`: Performs a check on code quality.
 
-## Technologies Used
+## ✉️ Contact
 
-- **Frontend**: React, React Router, Vite
-- **Styling**: CSS3 with responsive design
-- **Development**: Vite for fast development and building
+For collaboration or inquiries, feel free to reach out via the contact form in the portfolio or directly at: **facuudelimaa@gmail.com**
 
-## Contact
-
-For any questions or issues, please contact: facuudelimaa@gmail.com
+---
+*Designed & Built by Facu*
