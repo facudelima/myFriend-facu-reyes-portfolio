@@ -26,10 +26,7 @@ export default function Header({ onMenuClick }) {
             <div className="header-left">
                 {scrolled ? (
                     <button onClick={scrollToHome} className="home-scroll-btn" aria-label="Home">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
+                        <img src="/images/home.png" alt="Home" style={{ width: '36px', height: '36px' }} />
                     </button>
                 ) : (
                     <a href="/images/cv.pdf" className="header-cv" download>Download CV</a>
