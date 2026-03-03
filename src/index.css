@@ -674,13 +674,7 @@ textarea {
   width: 24px;
   height: 24px;
   object-fit: contain;
-  filter: grayscale(1);
-  /* Keep it B&W to match theme */
-}
-
-.social-link:hover .social-img {
-  filter: grayscale(0) brightness(5);
-  /* Turn white on hover */
+  transition: opacity 0.2s ease;
 }
 
 .global-footer {

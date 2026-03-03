@@ -66,15 +66,24 @@ export default function Contact() {
         </form>
 
         <div className="social-icons">
-          <a href="https://www.linkedin.com/in/facur/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
-            <img src="/images/linkedin.png" alt="LinkedIn" className="social-img" />
-          </a>
-          <a href="https://www.behance.net/facundoreyes" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Behance">
-            <img src="/images/behance.png" alt="Behance" className="social-img" />
-          </a>
-          <a href="https://www.instagram.com/imfucdat/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
-            <img src="/images/instagram.png" alt="Instagram" className="social-img" />
-          </a>
+          <SocialIcon
+            href="https://www.linkedin.com/in/facur/"
+            img="/images/linkedin.png"
+            hoverImg="/images/linkedin-hover.png"
+            alt="LinkedIn"
+          />
+          <SocialIcon
+            href="https://www.behance.net/facundoreyes"
+            img="/images/behance.png"
+            hoverImg="/images/behance-hover.png"
+            alt="Behance"
+          />
+          <SocialIcon
+            href="https://www.instagram.com/imfucdat/"
+            img="/images/instagram.png"
+            hoverImg="/images/instagram-hover.png"
+            alt="Instagram"
+          />
         </div>
       </div>
 
@@ -83,5 +92,27 @@ export default function Contact() {
         <p>© {new Date().getFullYear()}</p>
       </footer>
     </div>
+  );
+}
+
+function SocialIcon({ href, img, hoverImg, alt }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-link"
+      aria-label={alt}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <img
+        src={isHovered ? hoverImg : img}
+        alt={alt}
+        className="social-img"
+      />
+    </a>
   );
 }
