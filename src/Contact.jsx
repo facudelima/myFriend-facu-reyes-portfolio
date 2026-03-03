@@ -1,23 +1,68 @@
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 export default function Contact() {
+  const form = useRef();
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState(null); // 'success' | 'error'
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+    setStatus(null);
+
+    // Replace these with your own EmailJS IDs
+    const SERVICE_ID = 'YOUR_SERVICE_ID';
+    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then((result) => {
+        console.log(result.text);
+        setStatus('success');
+        form.current.reset();
+      }, (error) => {
+        console.log(error.text);
+        setStatus('error');
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
+
   return (
-    <div className="contact-page-wrapper">
+    <div id="contact" className="contact-page-wrapper">
       <div className="container contact-container">
         <h2 className="page-title">Contact</h2>
 
-        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+        <form ref={form} className="contact-form" onSubmit={sendEmail}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" placeholder="Full Name" />
+            <input type="text" name="user_name" id="name" placeholder="Full Name" required />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="Email Address" />
+            <input type="email" name="user_email" id="email" placeholder="Email Address" required />
           </div>
           <div className="form-group">
             <label htmlFor="message">Message</label>
-            <textarea id="message" placeholder="Your Message..." rows="6"></textarea>
+            <textarea name="message" id="message" placeholder="Your Message..." rows="6" required></textarea>
           </div>
-          <button type="submit" className="pill-button-solid submit-button">Send Message</button>
+
+          <button
+            type="submit"
+            className="pill-button-solid submit-button"
+            disabled={isSending}
+          >
+            {isSending ? 'Sending...' : 'Send Message'}
+          </button>
+
+          {status === 'success' && (
+            <p className="form-status success">Message sent successfully! I'll get back to you soon.</p>
+          )}
+          {status === 'error' && (
+            <p className="form-status error">Something went wrong. Please try again or email me directly.</p>
+          )}
         </form>
 
         <div className="social-icons">

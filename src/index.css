@@ -625,6 +625,26 @@ textarea {
   margin-top: 1rem;
 }
 
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-status.success {
+  color: #28a745;
+}
+
+.form-status.error {
+  color: #dc3545;
+}
+
 .social-icons {
   display: flex;
   gap: 1rem;
