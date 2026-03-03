@@ -63,7 +63,7 @@ textarea {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 24px;
 }
 
 @media (min-width: 768px) {
@@ -93,7 +93,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 1.5rem;
+  padding: 32px 24px;
   position: fixed;
   top: 0;
   left: 0;
@@ -106,7 +106,7 @@ textarea {
 .header-scrolled {
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
-  padding: 1rem 1.5rem;
+  padding: 16px 24px;
 }
 
 @media (min-width: 768px) {
@@ -133,17 +133,25 @@ textarea {
 
 
 .header-cv {
-  width: 282px;
+  width: 160px;
+  /* Reduced for mobile to fit side-by-side */
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--black);
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.2s ease;
   background: white;
+}
+
+@media (min-width: 768px) {
+  .header-cv {
+    width: 282px;
+    font-size: 1rem;
+  }
 }
 
 .header-cv:hover {
@@ -284,8 +292,13 @@ textarea {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 96px;
-  /* Space from bottom indicated in design */
+  margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+  .home-button-wrapper {
+    margin-bottom: 96px;
+  }
 }
 
 .home-button-wrapper .pill-button-solid {
