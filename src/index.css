@@ -305,9 +305,9 @@ textarea {
 
 .home-title h1 {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(3rem, 15vw, 6rem);
+  font-size: 64px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.1004;
   letter-spacing: -0.03em;
   white-space: nowrap;
   color: #000;
@@ -315,8 +315,9 @@ textarea {
 
 .home-subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1rem, 4vw, 2rem);
+  font-size: 24px;
   font-weight: 400;
+  line-height: 1.00043;
   margin-bottom: 2.5rem;
   text-align: justify;
   text-align-last: justify;
