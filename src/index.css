@@ -285,14 +285,21 @@ textarea {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  text-align: center;
   padding: 0 1.5rem;
+}
+
+.home-content {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Forces children to the same width */
+  text-align: left;
 }
 
 .home-title {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 2rem;
 }
 
@@ -301,19 +308,38 @@ textarea {
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.03em;
+  white-space: nowrap;
 }
 
 .home-subtitle {
   font-size: clamp(1.2rem, 3vw, 2.5rem);
   font-weight: 400;
   margin-bottom: 2.5rem;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+@media (min-width: 768px) {
+  .home-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    line-height: 1.00043;
+    height: 48px;
+    color: #000;
+  }
 }
 
 .home-button-wrapper {
   display: flex;
-  justify-content: center;
-  width: 100%;
   margin-bottom: 64px;
+}
+
+.home-button-wrapper .pill-button-solid {
+  flex: 1;
+  /* Take all available width in the stretched container */
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -329,7 +355,7 @@ textarea {
 
 @media (min-width: 768px) {
   .home-button-wrapper .pill-button-solid {
-    max-width: 450px;
+    max-width: 100%;
   }
 }
 
