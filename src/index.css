@@ -320,6 +320,13 @@ textarea {
 }
 
 @media (min-width: 768px) {
+  .home-title h1 {
+    font-size: 128px;
+    font-weight: 700;
+    line-height: 1.1004;
+    color: #000;
+  }
+
   .home-subtitle {
     font-family: 'Inter', sans-serif;
     font-size: 48px;
