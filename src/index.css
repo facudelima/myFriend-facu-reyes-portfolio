@@ -282,17 +282,17 @@ textarea {
 .home-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
-  text-align: center;
+  text-align: left;
   padding: 0 1.5rem;
 }
 
 .home-title {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 2rem;
 }
 
@@ -311,7 +311,7 @@ textarea {
 
 .home-button-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   margin-bottom: 64px;
 }
