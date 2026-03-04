@@ -2,18 +2,19 @@ import { useState } from 'react';
 
 const projects = [
     // UX/UI
-    { id: 1, title: 'UIUX Case Study 1', image: '/images/uiux1.png', category: 'UX/UI', type: 'Fintech App', role: 'Lead Designer', goal: 'User flow optimization' },
-    { id: 2, title: 'UIUX Case Study 2', image: '/images/uiux2.png', category: 'UX/UI', type: 'E-commerce', role: 'Product Designer', goal: 'Mobile experience' },
+    { id: 1, title: 'Kiddest', image: '/images/kiddest portada.png', category: 'UX/UI', type: 'UX/UI Design', role: 'UX/UI Designer', goal: 'Educational Platform' },
+    { id: 2, title: 'Eira', image: '/images/eira portada.png', category: 'UX/UI', type: 'UX/UI Design', role: 'UX/UI Designer', goal: 'Mental Health App' },
+    { id: 3, title: 'DotStudio', image: '/images/dotstudio-portada.png', category: 'UX/UI', type: 'UX/UI Design', role: 'UX/UI Designer', goal: 'Creative Studio' },
 
     // Branding
-    { id: 3, title: 'Brand Illustration Art', image: '/images/illustration3.png', category: 'Branding', type: 'Visual Identity', role: 'Illustrator', goal: 'Brand storytelling' },
-    { id: 4, title: 'Corporate Branding Piece', image: '/images/illustration7.png', category: 'Branding', type: 'Photography/Graphic', role: 'Art Director', goal: 'Modern aesthetic' },
-    { id: 5, title: 'Creative Visual Direction', image: '/images/illustration9.png', category: 'Branding', type: 'Composite Art', role: 'Visual Designer', goal: 'Impactful imagery' },
+    { id: 4, title: 'Fucdat', image: '/images/fucdat portada.png', category: 'Branding', type: 'Visual Identity', role: 'Brand Designer', goal: 'Health & Wellness' },
+    { id: 5, title: 'Taura', image: '/images/taura-portada.png', category: 'Branding', type: 'Visual Identity', role: 'Brand Designer', goal: 'Modern Branding' },
+    { id: 6, title: 'Exergia', image: '/images/exergia portada.png', category: 'Branding', type: 'Visual Identity', role: 'Brand Designer', goal: 'Sustainable Energy' },
 
     // Motion
-    { id: 6, title: 'Motion Graphic 1', video: '/images/motiongraphics1.mp4', category: 'Motion', type: 'Explainer Video', role: 'Motion Designer', goal: 'Dynamic storytelling' },
-    { id: 7, title: 'Motion Graphic 2', video: '/images/motiongraphics2.mp4', category: 'Motion', type: 'Social Media Ad', role: 'Animator', goal: 'User engagement' },
-    { id: 8, title: 'Motion Graphic 4', video: '/images/motiongraphics4.mp4', category: 'Motion', type: 'Interface Animation', role: 'Motion Designer', goal: 'UX micro-interactions' },
+    { id: 7, title: 'Motion Graphic 1', video: '/images/motiongraphics1.mp4', category: 'Motion', type: 'Explainer Video', role: 'Motion Designer', goal: 'Dynamic storytelling' },
+    { id: 8, title: 'Motion Graphic 2', video: '/images/motiongraphics2.mp4', category: 'Motion', type: 'Social Media Ad', role: 'Animator', goal: 'User engagement' },
+    { id: 9, title: 'Motion Graphic 4', video: '/images/motiongraphics4.mp4', category: 'Motion', type: 'Interface Animation', role: 'Motion Designer', goal: 'UX micro-interactions' },
 ];
 
 export default function Work() {
