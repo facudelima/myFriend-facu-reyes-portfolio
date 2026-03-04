@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function Header({ onMenuClick }) {
+export default function Header({ isMenuOpen, onToggleMenu }) {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -22,9 +22,9 @@ export default function Header({ onMenuClick }) {
     };
 
     return (
-        <header className={`global-header ${scrolled ? 'header-scrolled' : ''}`}>
+        <header className={`global-header ${scrolled ? 'header-scrolled' : ''} ${isMenuOpen ? 'header-menu-active' : ''}`}>
             <div className="header-left">
-                {scrolled ? (
+                {scrolled && !isMenuOpen ? (
                     <button onClick={scrollToHome} className="home-scroll-btn" aria-label="Home">
                         <img src="/images/home.png" alt="Home" style={{ width: '36px', height: '36px' }} />
                     </button>
@@ -33,11 +33,14 @@ export default function Header({ onMenuClick }) {
                 )}
             </div>
             <div className="header-right">
-                <button className="menu-toggle" onClick={onMenuClick}>
+                <button className={`menu-toggle ${isMenuOpen ? 'is-open' : ''}`} onClick={onToggleMenu}>
                     <span className="icon-plus">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
                     </span>
-                    <span className="menu-text">MENU</span>
+                    <span className="menu-text">{isMenuOpen ? 'CLOSE' : 'MENU'}</span>
                 </button>
             </div>
         </header>

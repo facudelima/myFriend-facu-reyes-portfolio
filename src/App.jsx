@@ -20,10 +20,12 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <Header onMenuClick={() => setIsMenuOpen(true)} />
+      <Header
+        isMenuOpen={isMenuOpen}
+        onToggleMenu={() => setIsMenuOpen(!isMenuOpen)}
+      />
       <MenuOverlay
         isOpen={isMenuOpen}
-        onClose={() => setIsMenuOpen(false)}
         onNavigate={handleMenuClick}
       />
 

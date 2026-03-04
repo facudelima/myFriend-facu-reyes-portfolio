@@ -38,7 +38,7 @@ export default function Contact() {
         <form ref={form} className="contact-form" onSubmit={sendEmail}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
-            <input type="text" name="user_name" id="name" placeholder="Full Name" required />
+            <input type="text" name="name" id="name" placeholder="Full Name" required />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>

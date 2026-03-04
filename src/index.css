@@ -108,9 +108,15 @@ textarea {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 50;
+  z-index: 1000;
+  /* High z-index to stay above overlay */
   background-color: transparent;
   transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.header-menu-active {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
 }
 
 .header-scrolled {
@@ -190,6 +196,11 @@ textarea {
   align-items: center;
   justify-content: center;
   line-height: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle.is-open .icon-plus {
+  transform: rotate(45deg);
 }
 
 .menu-toggle .icon-plus svg {
@@ -197,18 +208,12 @@ textarea {
   height: 32px;
 }
 
-.menu-toggle .icon-close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 25.6px;
-}
-
 .menu-toggle .menu-text {
   font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  margin-top: -2px;
 }
 
 .menu-overlay {
@@ -674,8 +679,6 @@ textarea {
 .social-link {
   width: 48px;
   height: 48px;
-  border: 1px solid var(--border-grey);
-  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -684,14 +687,12 @@ textarea {
 }
 
 .social-link:hover {
-  border-color: var(--black);
-  background-color: var(--black);
-  color: var(--white);
+  transform: translateY(-3px);
 }
 
 .social-img {
-  width: 24px;
-  height: 24px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
   transition: opacity 0.2s ease;
 }
