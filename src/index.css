@@ -304,15 +304,18 @@ textarea {
 }
 
 .home-title h1 {
-  font-size: clamp(4rem, 12vw, 10rem);
-  font-weight: 900;
-  line-height: 1.05;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(3rem, 15vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: -0.03em;
   white-space: nowrap;
+  color: #000;
 }
 
 .home-subtitle {
-  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 4vw, 2rem);
   font-weight: 400;
   margin-bottom: 2.5rem;
   text-align: justify;
