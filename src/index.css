@@ -250,8 +250,7 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  align-items: center;
-  /* Centrar elementos li */
+  align-items: flex-start;
 }
 
 .menu-link-btn {
@@ -264,8 +263,27 @@ textarea {
   border: none;
   cursor: pointer;
   padding: 0;
-  text-align: center;
-  /* Asegurar texto centrado */
+  text-align: left;
+  position: relative;
+  display: inline-block;
+}
+
+.menu-link-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #FFD700;
+  /* Yellow color */
+  transition: width 0.3s ease;
+  z-index: -1;
+  /* Place it slightly behind or at the same level as text */
+}
+
+.menu-link-btn:hover::after {
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -275,7 +293,7 @@ textarea {
 
   .menu-nav ul {
     gap: 2rem;
-    align-items: center;
+    align-items: flex-start;
   }
 }
 
