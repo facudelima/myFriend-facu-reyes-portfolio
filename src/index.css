@@ -6,6 +6,7 @@
   --grey: #C4C4C4;
   --text-grey: #666666;
   --border-grey: #E5E5E5;
+  --yellow: #FFD700;
 }
 
 * {
@@ -92,11 +93,13 @@ textarea {
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.9rem;
-  transition: opacity 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .pill-button-solid:hover {
-  opacity: 0.8;
+  background-color: var(--yellow);
+  color: var(--black);
+  opacity: 1;
 }
 
 .global-header {
@@ -275,7 +278,7 @@ textarea {
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: #FFD700;
+  background-color: var(--yellow);
   /* Yellow color */
   transition: width 0.3s ease;
   z-index: -1;
