@@ -14,7 +14,7 @@ const projects = [
     // Motion
     { id: 7, title: 'Motion Graphic 1', video: '/images/motiongraphics1.mp4', category: 'Motion', type: 'Explainer Video', role: 'Motion Designer', goal: 'Dynamic storytelling' },
     { id: 8, title: 'Motion Graphic 2', video: '/images/motiongraphics2.mp4', category: 'Motion', type: 'Social Media Ad', role: 'Animator', goal: 'User engagement' },
-    { id: 9, title: 'Motion Graphic 4', video: '/images/motiongraphics4.mp4', category: 'Motion', type: 'Interface Animation', role: 'Motion Designer', goal: 'UX micro-interactions' },
+    { id: 9, title: 'Motion Graphic 3', video: '/images/motiongraphics3.mp4', category: 'Motion', type: 'Interface Animation', role: 'Motion Designer', goal: 'UX micro-interactions' },
 ];
 
 export default function Work() {
