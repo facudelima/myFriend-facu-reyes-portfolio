@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const projects = [
     // UX/UI
-    { id: 1, title: 'Kiddest', image: '/images/kiddest portada.png', category: 'UX/UI', type: 'UX/UI Design', role: 'UX/UI Designer', goal: 'Educational Platform' },
-    { id: 2, title: 'Eira', image: '/images/eira portada.png', category: 'UX/UI', type: 'UX/UI Design', role: 'UX/UI Designer', goal: 'Mental Health App' },
-    { id: 3, title: 'DotStudio', image: '/images/dotstudio-portada.png', category: 'UX/UI', type: 'UX/UI Design', role: 'UX/UI Designer', goal: 'Creative Studio' },
+    { id: 1, title: 'Kiddest', image: '/images/kiddest portada.png', category: 'UX/UI', type: 'Educational App', role: 'UX/UI Design & Visual System', goal: 'Make English fun and easy for kids' },
+    { id: 2, title: 'Eira', image: '/images/eira portada.png', category: 'UX/UI', type: 'Brand Identity & Website Design', role: 'Branding & UX/UI Design', goal: 'Inspire relaxation and encourage bookings' },
+    { id: 3, title: 'Dot Studio', image: '/images/dotstudio-portada.png', category: 'UX/UI', type: 'Brand Identity & Website Design', role: 'Branding & UX/UI Design', goal: 'Build trust through a confident digital presence' },
 
     // Branding
     { id: 4, title: 'Fucdat', image: '/images/fucdat portada.png', category: 'Branding', type: 'Visual Identity', role: 'Brand Designer', goal: 'Health & Wellness' },

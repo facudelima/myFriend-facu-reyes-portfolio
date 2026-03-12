@@ -35,9 +35,9 @@ export default function Header({ isMenuOpen, onToggleMenu }) {
             <div className="header-right">
                 <button className={`menu-toggle ${isMenuOpen ? 'is-open' : ''}`} onClick={onToggleMenu}>
                     <span className="icon-plus">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="12" y1="2" x2="12" y2="22"></line>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
                         </svg>
                     </span>
                     <span className="menu-text">{isMenuOpen ? 'CLOSE' : 'MENU'}</span>
