@@ -399,7 +399,7 @@ textarea {
 }
 
 .page-title {
-  font-size: 64px;
+  font-size: 48px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -410,7 +410,7 @@ textarea {
 
 @media (min-width: 768px) {
   .page-title {
-    font-size: 120px;
+    font-size: 48px;
     margin-top: 150px;
     margin-bottom: 4rem;
   }
@@ -421,17 +421,19 @@ textarea {
 }
 
 .about-intro {
-  max-width: 800px;
-  margin: 0 auto 4rem auto;
+  max-width: 1036px;
+  width: 100%;
+  margin: 0 auto 4rem;
+  padding-left: 32px;
   text-align: left;
-  font-size: 1rem;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 @media (min-width: 768px) {
   .about-intro {
-    font-size: 1.1rem;
     margin-bottom: 6rem;
-    text-align: center;
   }
 }
 
@@ -446,24 +448,33 @@ textarea {
   .about-content {
     flex-direction: row;
     gap: 4rem;
-    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
   }
 }
 
 .about-what-i-do,
 .about-how-i-work {
   display: flex;
-  width: 486px;
-  padding: 32px;
+  width: 100%;
+  padding: 20px;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
 }
 
+@media (min-width: 768px) {
+  .about-what-i-do,
+  .about-how-i-work {
+    width: 486px;
+    padding: 32px;
+  }
+}
+
 .about-what-i-do h3,
 .about-how-i-work h3 {
-  font-size: 1.5rem;
-  font-weight: 900;
+  font-size: 28px;
+  font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
@@ -522,6 +533,33 @@ textarea {
   .about-how-i-work {
     border: none;
     padding: 0;
+  }
+
+  .about-what-i-do,
+  .about-how-i-work {
+    padding: 0;
+  }
+
+  .about-intro {
+    padding-left: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  .about-how-i-work p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  .do-list li {
+    display: flex;
+    width: 342px;
+    align-items: flex-start;
+    gap: 12px;
   }
 }
 
